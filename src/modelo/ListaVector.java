@@ -56,7 +56,7 @@ public class ListaVector {
      * @return Retorna true si elimina el valor y false en caso contrario
      */
     public boolean eliminar(int indice) {
-        if (indice >= 0 && indice < n) {
+        if (n > 0 && indice >= 0 && indice < n) {
             n--;
             for (int i = indice; i < n; i++) {
                 datos[i] = datos[i + 1];
