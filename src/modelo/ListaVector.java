@@ -56,10 +56,11 @@ public class ListaVector {
      * @return Retorna true si elimina el valor y false en caso contrario
      */
     public boolean eliminar(int indice) {
-        if (n > 0 && indice >= 0 && indice < n) {
+        if (indice >= 0 && indice < n) {
             n--;
-            for (int i = indice; i < n; i++) {
-                datos[i] = datos[i + 1];
+            while (indice < n) {
+                datos[indice] = datos[indice + 1];
+                indice++;
             }
             if (datos.length / 4 == n) {
                 cambiarCapacidad(datos.length / 2);
