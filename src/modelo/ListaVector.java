@@ -43,7 +43,6 @@ public class ListaVector {
         if (datos.length == n) {
             cambiarCapacidad(2 * n);
         }
-
         datos[n++] = dato;
     }
 
@@ -87,8 +86,30 @@ public class ListaVector {
         }
     }
 
+    /**
+     * Retorna un número entero que indica la cantidad de elementos que tiene
+     * esta lista.
+     *
+     * @return entero que indica la cantidad de elementos que tiene la lista.
+     */
     public int tamanio() {
         return n;
+    }
+
+    /**
+     * Retorna el elemento de la posición especificada.
+     *
+     * @param indice entero que indica la posición del dato a recuperar.
+     * @return el entero ubicado en la posición esepecificada.
+     * @throws IndexOutOfBoundsException si la posición no existe. La posición
+     * no existe si index es menor que cero o mayor o igual al tamaño de la
+     * lista.
+     */
+    public double obtener(int indice) throws IndexOutOfBoundsException {
+        if (indice >= 0 && indice < n) {
+            return datos[indice];
+        }
+        throw new IndexOutOfBoundsException();
     }
 
     /**
