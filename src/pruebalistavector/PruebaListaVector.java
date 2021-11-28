@@ -30,17 +30,38 @@ public class PruebaListaVector {
     public static void main(String[] args) {
         ListaVector lista = new ListaVector();
 
-        lista.agregar(23);
-        lista.agregar(7);
-        lista.agregar(84);
-        lista.agregar(23);
+        lista.agregar(28);
+        lista.agregar(40);
+        lista.agregar(-46);
+        lista.agregar(79);
+        lista.agregar(98);
+        lista.agregar(37);
+        lista.agregar(204);
+        lista.agregar(-657);
 
         System.out.println("Lista: ");
         System.out.println(lista);
 
-        lista.eliminar(2);
+        ListaVector lista2 = eliminarPares(lista);
 
-        System.out.println("\nLista después de borrar: ");
+        System.out.println("\nLista después de borrar pares: ");
         System.out.println(lista);
+
+        System.out.println("\nLista de pares: ");
+        System.out.println(lista2);
+    }
+
+    public static ListaVector eliminarPares(ListaVector lista) {
+        ListaVector listaPares = new ListaVector();
+
+        for (int i = 0; i < lista.tamanio(); i++) {
+            double dato = lista.obtener(i);
+            if (dato % 2 == 0) {
+                lista.eliminar(i);
+                listaPares.agregar(dato);
+                i--;
+            }
+        }
+        return listaPares;
     }
 }
