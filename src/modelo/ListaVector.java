@@ -125,12 +125,22 @@ public class ListaVector {
         String cadena = "";
 
         if (n > 0) {
-            cadena += datos[0];
+            cadena += realACadena(datos[0]);
 
             for (int i = 1; i < n; i++) {
-                cadena += ", " + datos[i];
+                cadena += ", " + realACadena(datos[i]);
             }
         }
         return "[" + cadena + "]";
+    }
+
+    private String realACadena(double real) {
+        int entero = (int) real;
+        String cadena = real + "";
+
+        if (real == entero) {
+            cadena = entero + "";
+        }
+        return cadena;
     }
 }
